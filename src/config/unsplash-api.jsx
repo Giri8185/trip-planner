@@ -11,6 +11,7 @@ const unsplashApi = axios.create({
 
 export const searchPhotos = async (query) => {
   try {
+    console.log('hello')
     const response = await unsplashApi.get('/search/photos', {
       params: { query },
     });
