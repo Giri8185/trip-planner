@@ -157,7 +157,7 @@ const CreateTrip = () => {
           <h2 className="text-lg sm:text-xl my-3 font-medium">How many days would you like to stay?</h2>
           <Input
             type="number"
-            placeholder="Max. 7"
+            placeholder="Enter number of days"
             onChange={(e) => handleInputChange('stay', e.target.value)}
           />
         </div>
