@@ -13,7 +13,7 @@ const SignIn = () => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    setLoading(true); 
+    setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast.success('User signed in successfully!');
@@ -22,7 +22,7 @@ const SignIn = () => {
       console.error('Error signing in:', error.message);
       handleAuthError(error.code);
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
@@ -46,7 +46,16 @@ const SignIn = () => {
   };
 
   return (
-    <main className="flex items-center justify-center h-[80vh] bg-gray-100 p-4">
+    <main className="flex flex-col items-center px-5 sm:px-10 md:px-32 lg:px-56 gap-10">
+      {/* Hero Content */}
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mt-10 sm:mt-16">
+        <span className="text-blue-400">Embark on Your Next Adventure with AI:</span> Personalized Journeys Just a Tap Away!
+      </h2>
+      <p className="text-lg sm:text-xl text-gray-600 text-center">
+        Your AI-powered journey planner will help you find the perfectly crafted itinerary that meets your interests and budget.
+      </p>
+
+      {/* Sign-in Form */}
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Sign In</h2>
         <form onSubmit={handleSignIn} className="space-y-4">
